@@ -3,7 +3,7 @@ require('dotenv').config();
 
 const sequelize = new Sequelize(process.env.DB_NAME, process.env.DB_USER, process.env.DB_PASSWORD, {
     host: process.env.DB_HOST,
-    dialect: 'postgres' // Isso indica que você está usando o PostgreSQL
+    dialect: 'postgres' 
 });
 
 const testConnection = async () => {
