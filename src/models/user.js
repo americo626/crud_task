@@ -1,6 +1,6 @@
 const { Sequelize, DataTypes } = require('sequelize');
 const sequelize = require('../config/database');
-const Task = require('./task'); // Adicione esta linha para importar o modelo Task
+const Task = require('./task'); 
 
 const User = sequelize.define('User', {
   username: {
@@ -14,7 +14,7 @@ const User = sequelize.define('User', {
 }, {
   tableName: 'users', // Nome da tabela no banco de dados
   timestamps: true, // Adiciona createdAt e updatedAt automaticamente
-  freezeTableName: true, // Impede a pluralização do nome da tabela
+  freezeTableName: true, 
 });
 
 User.hasMany(Task, { foreignKey: 'userId' });
