@@ -1,12 +1,12 @@
 const express = require('express');
-const Task = require('../models/task'); // Importa o modelo Task
-const User = require('../models/user'); // Importa o modelo User
+const Task = require('../models/task'); 
+const User = require('../models/user'); 
 const router = express.Router();
 
 // Rota para obter tarefas
 router.get('/', async (req, res) => {
     try {
-        const tasks = await Task.findAll({ include: User }); // Inclui o User nas tarefas
+        const tasks = await Task.findAll({ include: User }); 
         res.json(tasks);
     } catch (error) {
         console.error('Erro ao obter tarefas:', error);
@@ -18,7 +18,7 @@ router.get('/', async (req, res) => {
 router.post('/', async (req, res) => {
     const { title, userId } = req.body;
     try {
-        const task = await Task.create({ title, userId }); // Cria tarefa com userId
+        const task = await Task.create({ title, userId }); 
         res.status(201).json(task);
     } catch (error) {
         console.error('Erro ao adicionar tarefa:', error);
