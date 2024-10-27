@@ -2,7 +2,7 @@ const taskForm = document.getElementById('taskForm');
 const taskList = document.getElementById('taskList');
 const registerForm = document.getElementById('registerForm');
 
-let currentUserId = null; // Armazena o ID do usuário atualmente registrado
+let currentUserId = null; 
 
 registerForm.onsubmit = async (event) => {
     event.preventDefault();
@@ -11,7 +11,7 @@ registerForm.onsubmit = async (event) => {
     try {
         const response = await axios.post('http://localhost:3000/users/register', { username, password });
         console.log('Usuário registrado:', response.data);
-        currentUserId = response.data.id; // Supondo que o ID do usuário é retornado
+        currentUserId = response.data.id; 
         registerForm.reset();
         alert('Usuário registrado com sucesso!');
     } catch (error) {
